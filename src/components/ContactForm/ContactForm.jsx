@@ -5,7 +5,9 @@ import { nanoid } from 'nanoid';
 
 class ContactForm extends Component {
   nameId = nanoid();
+
   numberId = nanoid();
+
   state = {
     name: '',
     number: '',
@@ -21,7 +23,8 @@ class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    this.props.onSubmit(this.state);
+    const { onSubmit } = this.props;
+    onSubmit(this.state);
     this.reset();
   };
 
