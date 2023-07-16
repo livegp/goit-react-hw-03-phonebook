@@ -1,8 +1,7 @@
+import { Head, Table } from './ContactList.styled';
 import PropTypes from 'prop-types';
 
-import { Head, Table } from './ContactList.styled';
-
-function ContactList({ contacts, filter, onDelete }) {
+const ContactList = ({ contacts, filter, onDelete }) => {
   const visibleContactList = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
@@ -35,7 +34,7 @@ function ContactList({ contacts, filter, onDelete }) {
       </tbody>
     </Table>
   );
-}
+};
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
@@ -44,8 +43,8 @@ ContactList.propTypes = {
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     })
-  ).isRequired,
-  filter: PropTypes.string.isRequired,
+  ),
+  filter: PropTypes.string,
   onDelete: PropTypes.func.isRequired,
 };
 

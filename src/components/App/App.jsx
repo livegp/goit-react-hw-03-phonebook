@@ -1,10 +1,9 @@
-import { nanoid } from 'nanoid';
-import React, { Component } from 'react';
-
 import { Container, Section, SubTitle, Title } from './App.styled';
-import ContactForm from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import Filter from '../Filter/Filter';
+import { Component } from 'react';
+import ContactForm from 'components/ContactForm/ContactForm';
+import ContactList from 'components/ContactList/ContactList';
+import Filter from 'components/Filter/Filter';
+import { nanoid } from 'nanoid';
 
 class App extends Component {
   state = {
@@ -12,33 +11,18 @@ class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    const contacts = JSON.parse(localStorage.getItem('contacts'));
-    if (contacts) {
-      this.setState({ contacts });
-    }
-  }
-
-  componentDidUpdate(prevState) {
-    const { contacts } = this.state;
-    if (prevState.contacts !== contacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-  }
-
   formSubmit = data => {
-    const newData = { ...data };
-    newData.id = nanoid(5);
+    data.id = nanoid(5);
     const { contacts } = this.state;
     const isContactExist = contacts.find(
       contact => contact.name.toLowerCase() === data.name.toLowerCase()
     );
     if (isContactExist) {
-      alert(`${data.name} is already in contacts`);
+      alert(`${data.name} is already in contacts`); //eslint-disable-line
       return;
     }
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, newData],
+      contacts: [...prevState.contacts, data],
     }));
   };
 

@@ -1,6 +1,6 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -16,5 +16,3 @@ const Form = styled.form`
     border-radius: 5px;
   }
 `;
-
-export default Form;

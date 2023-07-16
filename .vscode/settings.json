@@ -1,5 +1,12 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.ignoreWords": [
+    "Marica",
+    "Roboto",
+    "goit",
+    "pmarica",
+    "stylelint",
+    "wght"
+  ],
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "[javascript]": {
@@ -13,11 +20,8 @@
   },
   "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": true
   },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "cSpell.words": [
-    "namics"
-  ]
+  "cSpell.words": ["formik", "Phonebook"]
 }

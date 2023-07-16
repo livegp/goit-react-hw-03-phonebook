@@ -1,14 +1,11 @@
-import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
-import { Component } from 'react';
-
 import { Btn, Form, List } from './ContactForm.styled';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
 
 class ContactForm extends Component {
   nameId = nanoid();
-
   numberId = nanoid();
-
   state = {
     name: '',
     number: '',
@@ -24,8 +21,7 @@ class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const {onSubmit} = this.props;
-    onSubmit(this.state);
+    this.props.onSubmit(this.state);
     this.reset();
   };
 
