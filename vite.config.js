@@ -9,10 +9,7 @@ export default defineConfig({
     eslint({ fix: true }),
     stylelint({ fix: true }),
     react({
-      jsxImportSource: '@emotion/react',
-      babel: {
-        plugins: ['@emotion/babel-plugin']
-      }
+      babel: {}
     })
   ]
 });
