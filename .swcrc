@@ -8,7 +8,14 @@
             "displayName": true,
             "ssr": true
           }
-        ]
+        ],
+        "@swc/plugin-emotion",
+        {
+          "sourceMap": true,
+          "autoLabel": "dev-only",
+          "labelFormat": "[local]",
+          "cssPropOptimization": true
+        }
       ]
     }
   }
