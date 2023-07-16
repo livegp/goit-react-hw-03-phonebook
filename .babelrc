@@ -1,7 +1,21 @@
 {
   "plugins": [
-    ["babel-plugin-styled-components", {
-      "pure": true
-    }]
+    [
+      "@emotion",
+      {
+        "sourceMap": true,
+        "autoLabel": "dev-only",
+        "labelFormat": "[local]",
+        "cssPropOptimization": true
+      }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "minify": true,
+        "transpileTemplateLiterals": true,
+        "pure": true
+      }
+    ]
   ]
 }
